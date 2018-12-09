@@ -73,6 +73,11 @@ public class CluelessController
     @PostMapping("/accuse")
     ResponseEntity<AccuseResponseDTO> move(@RequestBody AccuseRequestDTO myAccuseRequestDTO) throws IOException, JSONException 
     {
+      /*if (getAccusedPlayer() == getMurderingPlayer() && getMurderScene() == getMurderLocation() && getMurderWeapon() == getMurderWeapon()){
+      endgame}
+      else{
+      Remove getAccusingPlayer from turn order
+      */
       AccuseResponseDTO result = myCluelessService.accuse(myAccuseRequestDTO);
       return ResponseEntity.ok().body(result);
     }
